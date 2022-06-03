@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset= "ISO-8950-1">
+<title>Inset title here</title>
+</head>
+<body>
+<h1>EDITAR DE MARCA</h1>
+	
+	
+		<br />
+			<a th:href="@{/MarcaAutoCtrl/}">REGRESAR</a>
+	    <br />
+	
+	<br />
+		
+		<form th:action="@{/MarcaAutoCtrl/actualizar}" method="post" th:object="${marcaAuto}">
+			<label for="id">Id</label>
+			<input type = "text" name="id" th:field="*{id}" />
+			<br />
+			
+			<label for="nombre">Nombre</label>
+			<input type = "text" name="nombre" th:field="*{nombre}" />
+			<br />
+
+			<label for="pais">pais</label>
+			<input type = "text" name="pais" th:field="*{pais}" />
+			<br />
+			
+			<label for="slogan">slogan</label>
+			<input type = "text" name="slogan" th:field="*{slogan}" />
+			<br />
+						
+			
+			
+			<input type = "submit" name="editar" value="Editar" />
+		</form>
+			
+			
+			
+</body>
+</html>

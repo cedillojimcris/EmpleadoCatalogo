@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset= "ISO-8950-1">
+<title>Inset title here</title>
+</head>
+<body>
+	<h1>ALTA DE AUTOS</h1>
+	
+	
+		<br />
+			<a th:href="@{/AutosCtrl/}">REGRESAR</a>
+	    <br />
+	
+	<br />
+		
+		<form th:action="@{/AutosCtrl/guardar}" method="post" th:object="${autos}">
+			<label for="id">Id</label>
+			<input type = "text" name="id" th:field="*{id}" />
+			<br />
+			
+			<label for="modelo">Modelo</label>
+			<input type = "text" name="modelo" th:field="*{modelo}" />
+			<br />
+
+			<label for="id_marca">Marca</label>
+			<input type = "text" name="marcaAuto.id" th:field="*{marcaAuto.id}" />
+			<br />
+						
+			<label for="precio">Precio</label>
+			<input type = "text" name="precio" th:field="*{precio}" />
+			<br />
+			
+			<label for="color">color</label>
+			<input type = "text" name="color" th:field="*{color}" />
+			<br />
+			
+			<label for="version">version</label>
+			<input type = "text" name="version" th:field="*{version}" />
+			<br />
+			
+			<label for="tipo">tipo</label>
+			<input type = "text" name="tipo" th:field="*{tipo}" />
+			<br />
+			
+			
+			<input type = "submit" name="guardar" value="Guardar" />
+		</form>
+			
+			
+			
+	
+</body>
+</html>

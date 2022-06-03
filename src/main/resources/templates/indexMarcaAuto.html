@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset= "ISO-8950-1">
+<title>Inset title here</title>
+</head>
+<body>
+	<h1>Gestion de marcas</h1>
+	<br>
+	
+	<a th:href="@{/MarcaAutoCtrl/alta}">ALTA DE MARCAS</a>
+	<br>
+	
+	<table border = "1">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Pais</th>
+				<th>Slogan</th>
+				<th>Eliminar</th>
+				<th>Editar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="m : ${lista}">
+			<td th:text="${m.id}">id</td>
+			<td th:text="${m.nombre}">nombre</td>
+			<td th:text="${m.pais}">pais</td>
+			<td th:text="${m.slogan}">slogan</td>
+			<td> <a th:href="@{/MarcaAutoCtrl/eliminar/}+${m.id}" th:text="Eliminar"></a></td>
+			<td> <a th:href="@{/MarcaAutoCtrl/editar/}+${m.id}" th:text="Editar"></a></td>
+			</tr>
+		</tbody>
+	</table>
+					
+	<br>
+	<a th:href="@{/MenuCtrl/}">MENU PRINCIPAL</a>
+	<br>
+				
+</body>
+</html>

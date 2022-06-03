@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset= "ISO-8950-1">
+<title>Inset title here</title>
+</head>
+<body>
+
+		<h1>Gestion de autos</h1>
+	<br>
+	
+	<a th:href="@{/AutosCtrl/alta}">ALTA DE AUTOS</a>
+	<br>
+	
+	<table border = "1">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Modelo</th>
+				<th>Marca</th>
+				<th>Precio</th>
+				<th>Color</th>
+				<th>Version</th>
+				<th>Tipo</th>
+				<th>Eliminar</th>
+				<th>Editar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="c : ${lista}">
+			<td th:text="${c.id}">id</td>
+			<td th:text="${c.modelo}">modelo</td>
+			<td th:text="${c.marcaAuto.nombre}">marca</td>
+			<td th:text="${c.precio}">precio</td>
+			<td th:text="${c.color}">color</td>
+			<td th:text="${c.version}">version</td>
+			<td th:text="${c.tipo}">tipo</td>
+			<td> <a th:href="@{/AutosCtrl/eliminar/}+${c.id}" th:text="Eliminar"></a></td>
+			<td> <a th:href="@{/AutosCtrl/editar/}+${c.id}" th:text="Editar"></a></td>
+			</tr>
+		</tbody>
+	</table>
+					
+	<br>
+	<a th:href="@{/MenuCtrl/}">MENU PRINCIPAL</a>
+	<br>
+	
+		
+				
+</body>
+</html>
